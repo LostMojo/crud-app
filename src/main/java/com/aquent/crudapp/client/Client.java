@@ -19,12 +19,12 @@ public class Client {
     private String websiteUri;
 
     @NotNull
-    @Size(min = 1, max = 50, message = "Street address is required with maximum length of 50")
-    private String streetAddress;
-
-    @NotNull
     @Size(min = 9, max = 12, message = "Phone number is required with a length of 9 or 12. No hyphens or parenthesis.")
     private String phoneNumber;
+
+    @NotNull
+    @Size(min = 1, max = 50, message = "Street address is required with maximum length of 50")
+    private String streetAddress;
 
     @NotNull
     @Size(min = 1, max = 50, message = "City is required with maximum length of 50")

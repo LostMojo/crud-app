@@ -37,8 +37,8 @@ INSERT INTO client (
     zip_code
 ) VALUES (
     'Aquent',
-    'aquent/games/101',
-    '123456789',
+    'test://192.0.2.16:80',
+    '1234567890',
     '123 Somewhere St.',
     'Nowhere',
     'TX',

@@ -5,14 +5,21 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Delete Person</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
   </head>
   <body>
-    <h1>Delete Person</h1>
-    <p>You are about to delete the person <th:block th:text="${person.firstName}" /> <th:block th:text="${person.lastName}" />:  Are you sure?</p>
-    <form action="/person/delete" method="post">
-      <input type="hidden" name="personId" th:value="${person.personId}"/>
-      <input type="submit" name="command" value="Cancel"/>
-      <input type="submit" name="command" value="Delete"/>
-    </form>
+    <div class="container">
+      <h1>Delete Person</h1>
+      <div class="container row">
+        <div class="well">
+          <p>You are about to delete the person <th:block th:text="${person.firstName}" /> <th:block th:text="${person.lastName}" />:  <b>Are you sure?</b></p>
+        </div>
+        <form action="/person/delete" method="post">
+          <input type="hidden" name="personId" th:value="${person.personId}"/>
+          <input type="submit" name="command" value="Cancel" class="btn btn-info"/>
+          <input type="submit" name="command" value="Delete" class="btn btn-danger"/>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
