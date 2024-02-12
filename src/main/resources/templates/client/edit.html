@@ -95,7 +95,7 @@
           <th:block th:if="${#lists.isEmpty(persons.?[clientId == __${client.clientId}__])}">
             <p>No associated contacts.</p>
           </th:block>
-          <h3>Add Contacts</h3>
+          <h3>Add Contacts?</h3>
           <br/>
           <table th:unless="${#lists.isEmpty(persons.?[clientId != __${client.clientId}__])}" class="table table-responsive table-striped">
               <thead>
@@ -121,6 +121,9 @@
                 </th:block>
               </tbody>
             </table>
+            <th:block th:if="${#lists.isEmpty(persons.?[clientId != __${client.clientId}__])}">
+            <p>No unassociated contacts.</p>
+            </th:block>
             <br/>
             <a id="return-button" href="/client/list" class="btn btn-info">Return to Client List</a>
           </th:block>
