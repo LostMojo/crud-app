@@ -36,11 +36,29 @@ const validationRules = [
     },
 ];
 
+const validateChange = (validationRule) => {
+    const inputElement = document.getElementsByName(validationRule.name)[0];
+    const inputGroup = inputElement.parentElement;
+
+    if (inputElement.value.match(validationRule.rule)) {
+        inputGroup.classList.remove("has-error");
+        removeErrorMessage(inputElement);
+        if (!document.getElementsByClassName("has-error")[0]) 
+            document.querySelector("input[name='Submit']").disabled = false;
+        return true;
+    } else {
+        inputGroup.classList.add("has-error");
+        displayErrorMessage(validationRule, inputElement);
+        document.querySelector("input[name='Submit']").disabled = true;
+        return false;
+    }
+}
+
 const displayErrorMessage = (validationRule, inputElement) => {
-    inputName = validationRule.name;
+    const inputName = validationRule.name;
 
     if (document.getElementById(`${inputName}-error`))
-        return
+        return;
 
     const inputGroup = inputElement.parentElement;
 
@@ -67,4 +85,4 @@ function addValidateFormListeners(validatorRules) {
 }
 
 
-addValidateFormListeners(personValidationRules);
+addValidateFormListeners(validationRules);

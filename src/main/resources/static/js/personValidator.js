@@ -1,4 +1,3 @@
-
 const personValidationRules = [
     {
         name: "firstName",
@@ -56,7 +55,7 @@ const validateChange = (validationRule) => {
 }
 
 const displayErrorMessage = (validationRule, inputElement) => {
-    inputName = validationRule.name;
+    const inputName = validationRule.name;
 
     if (document.getElementById(`${inputName}-error`))
         return
@@ -84,6 +83,5 @@ function addValidateFormListeners(validatorRules) {
         document.getElementsByName(validatorRule.name)[0].addEventListener("change",  () => validateChange(validatorRule));
     });
 }
-
 
 addValidateFormListeners(personValidationRules);
