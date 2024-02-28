@@ -35,31 +35,31 @@
         <form action="/person/create" method="POST">
           <div class="form-group row" id="firstNameGroup">
             <label for="firstName">First Name:</label>
-            <input type="text" name="firstName" th:value="${person.firstName}" class="form-control"/>
+            <input type="text" name="firstName" th:value="${person.firstName}" class="form-control" required/>
           </div>
           <div class="form-group row" id="lastNameGroup">
             <label for="lastName">Last Name:</label>
-            <input type="text" name="lastName" th:value="${person.lastName}" class="form-control"/>
+            <input type="text" name="lastName" th:value="${person.lastName}" class="form-control" required/>
           </div>
           <div class="form-group row" id="emailAddressGroup">
             <label for="emailAddress">Email Address:</label>
-            <input type="text" name="emailAddress" th:value="${person.emailAddress}" class="form-control"/>
+            <input type="text" name="emailAddress" th:value="${person.emailAddress}" class="form-control" required/>
           </div>
           <div class="form-group row" id="emailAddressGroup">
             <label for="streetAddress">Street Address:</label>
-            <input type="text" name="streetAddress" th:value="${person.streetAddress}" class="form-control"/>
+            <input type="text" name="streetAddress" th:value="${person.streetAddress}" class="form-control" required/>
           </div>
           <div class="form-group row" id="cityGroup">
             <label for="city">City:</label>
-            <input type="text" name="city" th:value="${person.city}" class="form-control"/>
+            <input type="text" name="city" th:value="${person.city}" class="form-control" required/>
           </div>
-          <div class="form-group row" id="stateGroup">
+          <div class="form-group row" id="stateGroup" required>
             <label for="state">State:</label>
-            <input type="text" name="state" th:value="${person.state}" class="form-control"/>
+            <input type="text" name="state" th:value="${person.state}" class="form-control" required/>
           </div>
           <div class="form-group row" id="zipCodeGroup">
             <label for="zipCode">Zip Code:</label>
-            <input type="text" name="zipCode" th:value="${person.zipCode}" class="form-control"/>
+            <input type="text" name="zipCode" th:value="${person.zipCode}" class="form-control" required/>
           </div>
           <br/>
           <div class="form-group row">
