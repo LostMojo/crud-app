@@ -35,7 +35,7 @@ public class Client {
     private String state;
 
     @NotNull
-    @Size(min = 5, max = 5, message = "Zip code is required with length between ")
+    @Size(min = 5, max = 5, message = "Zip code is required with length of five")
     private String zipCode;
 
     public Integer getClientId() {
